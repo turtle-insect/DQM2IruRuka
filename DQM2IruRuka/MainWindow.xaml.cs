@@ -75,6 +75,13 @@ namespace DQM2IruRuka
 			Close();
 		}
 
+		private void TextBoxItemFilter_TextChanged(object sender, TextChangedEventArgs e)
+		{
+			var vm = DataContext as ViewModel;
+			if (vm == null) return;
+			vm.FilterItem();
+		}
+
 		private void ButtonChoiceMonsterType_Click(object sender, RoutedEventArgs e)
 		{
 			var monster = (sender as Button)?.DataContext as Monster;

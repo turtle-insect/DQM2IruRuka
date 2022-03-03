@@ -9,17 +9,35 @@ namespace DQM2IruRuka
 {
 	internal class ViewModel
 	{
-		private Info mInfo = Info.Instance();
+		public String ItemFilter { get; set; } = "";
+		public ObservableCollection<Item> Items { get; private set; } = new ObservableCollection<Item>();
+		private List<Item> AllItems = new List<Item>();
 		public ObservableCollection<Monster> Monsters { get; private set; } = new ObservableCollection<Monster>();
 
 		public ViewModel()
 		{
+			foreach (var itemInfo in Info.Instance().Item)
+			{
+				AllItems.Add(new Item(0x136 + (itemInfo.Value - 1) * 2, itemInfo.Value));
+			}
+			FilterItem();
+
 			for (uint index = 0; index < 500; index++)
 			{
 				Monster monster = new Monster(0x4580 + index * 220);
 				if (monster.Type == 0) continue;
 
 				Monsters.Add(monster);
+			}
+		}
+
+		public void FilterItem()
+		{
+			Items.Clear();
+			foreach (var item in AllItems)
+			{
+				String name = Info.Instance().Search(Info.Instance().Item, item.ID)?.Name;
+				if (name?.IndexOf(ItemFilter) != -1) Items.Add(item);
 			}
 		}
 

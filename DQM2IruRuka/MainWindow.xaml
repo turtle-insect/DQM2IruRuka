@@ -137,6 +137,28 @@
 					</TabControl>
 				</Grid>
 			</TabItem>
+			<TabItem Header="Item">
+				<DockPanel>
+					<DockPanel DockPanel.Dock="Top">
+						<Label DockPanel.Dock="Left" Content="Filter"/>
+						<TextBox DockPanel.Dock="Right" Text="{Binding ItemFilter, UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBoxItemFilter_TextChanged"/>
+					</DockPanel>
+					<ListBox DockPanel.Dock="Bottom" ItemsSource="{Binding Items}">
+						<ListBox.Resources>
+							<local:ItemIDConverter x:Key="ItemIDConverter"/>
+						</ListBox.Resources>
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<StackPanel Orientation="Horizontal">
+									<Label Content="Count"/>
+									<TextBox Text="{Binding Count, UpdateSourceTrigger=PropertyChanged}" Width="40"/>
+									<Label Content="{Binding ID, Converter={StaticResource ItemIDConverter}}"/>
+								</StackPanel>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+				</DockPanel>
+			</TabItem>
 		</TabControl>
 	</DockPanel>
 </Window>
