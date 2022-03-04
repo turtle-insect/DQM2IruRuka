@@ -12,6 +12,8 @@ namespace DQM2IruRuka
 		public List<NameValueInfo> Item { get; private set; } = new List<NameValueInfo>();
 		public List<NameValueInfo> Type { get; private set; } = new List<NameValueInfo>();
 		public List<NameValueInfo> Skill { get; private set; } = new List<NameValueInfo>();
+		public List<NameValueInfo> Weapon { get; private set; } = new List<NameValueInfo>();
+		public List<NameValueInfo> Option { get; private set; } = new List<NameValueInfo>();
 
 		private Info() { }
 
@@ -45,6 +47,8 @@ namespace DQM2IruRuka
 			AppendList("info\\item.txt", Item);
 			AppendList("info\\type.txt", Type);
 			AppendList("info\\skill.txt", Skill);
+			AppendList("info\\weapon.txt", Weapon);
+			AppendList("info\\option.txt", Option);
 		}
 
 		private void AppendList<Type>(String filename, List<Type> items)

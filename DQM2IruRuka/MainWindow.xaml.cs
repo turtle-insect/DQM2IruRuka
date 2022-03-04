@@ -106,6 +106,38 @@ namespace DQM2IruRuka
 			monster.Skill2 = Choice(ChoiceWindow.eType.eSkill, monster.Skill2);
 		}
 
+		private void ButtonChoiceWeaponID_Click(object sender, RoutedEventArgs e)
+		{
+			var weapon = (sender as Button)?.DataContext as Weapon;
+			if (weapon == null) return;
+
+			weapon.ID = Choice(ChoiceWindow.eType.eWeapon, weapon.ID);
+		}
+
+		private void ButtonChoiceWeaponOption1_Click(object sender, RoutedEventArgs e)
+		{
+			var weapon = (sender as Button)?.DataContext as Weapon;
+			if (weapon == null) return;
+
+			weapon.Option1 = Choice(ChoiceWindow.eType.eOption, weapon.Option1);
+		}
+
+		private void ButtonChoiceWeaponOption2_Click(object sender, RoutedEventArgs e)
+		{
+			var weapon = (sender as Button)?.DataContext as Weapon;
+			if (weapon == null) return;
+
+			weapon.Option2 = Choice(ChoiceWindow.eType.eOption, weapon.Option2);
+		}
+
+		private void ButtonChoiceWeaponOption3_Click(object sender, RoutedEventArgs e)
+		{
+			var weapon = (sender as Button)?.DataContext as Weapon;
+			if (weapon == null) return;
+
+			weapon.Option3 = Choice(ChoiceWindow.eType.eOption, weapon.Option3);
+		}
+
 		private void FileOpen(bool force)
 		{
 			var dlg = new OpenFileDialog();

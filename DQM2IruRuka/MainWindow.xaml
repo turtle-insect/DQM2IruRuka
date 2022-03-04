@@ -159,6 +159,43 @@
 					</ListBox>
 				</DockPanel>
 			</TabItem>
+			<TabItem Header="Weapon">
+				<ListBox ItemsSource="{Binding Weapons}">
+					<ListBox.Resources>
+						<local:WeaponIDConverter x:Key="WeaponIDConverter"/>
+						<local:OptionIDConverter x:Key="OptionIDConverter"/>
+					</ListBox.Resources>
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<Label Content="Star"/>
+									<ComboBox Width="80" SelectedIndex="{Binding Star}">
+										<ComboBoxItem Content=""/>
+										<ComboBoxItem Content="★"/>
+										<ComboBoxItem Content="★★"/>
+										<ComboBoxItem Content="★★★"/>
+									</ComboBox>
+									<Button Content="..." Click="ButtonChoiceWeaponID_Click"/>
+									<Label Content="{Binding ID, Converter={StaticResource WeaponIDConverter}}"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<Button Content="..." Click="ButtonChoiceWeaponOption1_Click"/>
+									<Label Content="{Binding Option1, Converter={StaticResource OptionIDConverter}}"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<Button Content="..." Click="ButtonChoiceWeaponOption2_Click"/>
+									<Label Content="{Binding Option2, Converter={StaticResource OptionIDConverter}}"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<Button Content="..." Click="ButtonChoiceWeaponOption3_Click"/>
+									<Label Content="{Binding Option3, Converter={StaticResource OptionIDConverter}}"/>
+								</StackPanel>
+							</StackPanel>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+			</TabItem>
 		</TabControl>
 	</DockPanel>
 </Window>

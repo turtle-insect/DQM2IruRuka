@@ -10,8 +10,9 @@ namespace DQM2IruRuka
 	internal class ViewModel
 	{
 		public String ItemFilter { get; set; } = "";
-		public ObservableCollection<Item> Items { get; private set; } = new ObservableCollection<Item>();
 		private List<Item> AllItems = new List<Item>();
+		public ObservableCollection<Item> Items { get; private set; } = new ObservableCollection<Item>();
+		public ObservableCollection<Weapon> Weapons { get; private set; } = new ObservableCollection<Weapon>();
 		public ObservableCollection<Monster> Monsters { get; private set; } = new ObservableCollection<Monster>();
 
 		public ViewModel()
@@ -21,6 +22,14 @@ namespace DQM2IruRuka
 				AllItems.Add(new Item(0x136 + (itemInfo.Value - 1) * 2, itemInfo.Value));
 			}
 			FilterItem();
+
+			for (uint index = 0; index < 100; index++)
+			{
+				Weapon weapon = new Weapon(0x40B4 + index * 12);
+				if (weapon.ID == 0) continue;
+
+				Weapons.Add(weapon);
+			}
 
 			for (uint index = 0; index < 500; index++)
 			{

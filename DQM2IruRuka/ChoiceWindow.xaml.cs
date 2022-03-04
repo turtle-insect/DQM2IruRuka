@@ -23,6 +23,8 @@ namespace DQM2IruRuka
 		{
 			eType,
 			eSkill,
+			eWeapon,
+			eOption,
 		}
 		public uint ID { get; set; }
 		public eType Type { get; set; }
@@ -56,6 +58,7 @@ namespace DQM2IruRuka
 		private void ButtonDecision_Click(object sender, RoutedEventArgs e)
 		{
 			var item = (NameValueInfo)ListBoxItem.SelectedItem;
+			if (item == null) return;
 			ID = item.Value;
 			Close();
 		}
@@ -65,6 +68,8 @@ namespace DQM2IruRuka
 			ListBoxItem.Items.Clear();
 			var items = Info.Instance().Type;
 			if (Type == eType.eSkill) items = Info.Instance().Skill;
+			else if (Type == eType.eWeapon) items = Info.Instance().Weapon;
+			else if (Type == eType.eOption) items = Info.Instance().Option;
 
 			foreach (var item in items)
 			{
