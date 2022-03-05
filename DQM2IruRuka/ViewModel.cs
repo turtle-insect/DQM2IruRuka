@@ -12,6 +12,7 @@ namespace DQM2IruRuka
 		public String ItemFilter { get; set; } = "";
 		private List<Item> AllItems = new List<Item>();
 		public ObservableCollection<Item> Items { get; private set; } = new ObservableCollection<Item>();
+		public ObservableCollection<Egg> Eggs { get; private set; } = new ObservableCollection<Egg>();
 		public ObservableCollection<Weapon> Weapons { get; private set; } = new ObservableCollection<Weapon>();
 		public ObservableCollection<Monster> Monsters { get; private set; } = new ObservableCollection<Monster>();
 
@@ -22,6 +23,14 @@ namespace DQM2IruRuka
 				AllItems.Add(new Item(0x136 + (itemInfo.Value - 1) * 2, itemInfo.Value));
 			}
 			FilterItem();
+
+			{
+				Egg egg = new Egg(0xCB0);
+				if(egg.Type != 0)
+				{
+					Eggs.Add(egg);
+				}
+			}
 
 			for (uint index = 0; index < 100; index++)
 			{

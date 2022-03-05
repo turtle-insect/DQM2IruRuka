@@ -13,6 +13,7 @@
 	</Window.DataContext>
 	<Window.Resources>
 		<local:MonsterTypeConverter x:Key="MonsterTypeConverter"/>
+		<local:EggExpConverter x:Key="EggExpConverter"/>
 	</Window.Resources>
 	<DockPanel>
 		<Menu DockPanel.Dock="Top">
@@ -135,6 +136,48 @@
 							</Grid>
 						</TabItem>
 					</TabControl>
+				</Grid>
+			</TabItem>
+			<TabItem Header="Egg">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="200"/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<ListBox x:Name="ListBoxEgg" ItemsSource="{Binding Eggs}"/>
+					<Grid Grid.Column="1">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition/>
+							<ColumnDefinition/>
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition/>
+							<RowDefinition/>
+							<RowDefinition/>
+							<RowDefinition/>
+							<RowDefinition Height="12*"/>
+						</Grid.RowDefinitions>
+						<Label Content="Type"/>
+						<StackPanel Grid.Column="1" Orientation="Horizontal">
+							<Button Content=" ... " DataContext="{Binding ElementName=ListBoxEgg, Path=SelectedItem}" Click="ButtonChoiceEggType_Click"/>
+							<Label Grid.Column="1" Content="{Binding ElementName=ListBoxEgg, Path=SelectedItem.Type, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource MonsterTypeConverter}}"/>
+						</StackPanel>
+						<Label Grid.Row="1" Content="Lv"/>
+						<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ElementName=ListBoxEgg, Path=SelectedItem.Lv, UpdateSourceTrigger=PropertyChanged}"/>
+						<Label Grid.Row="2" Content="Plus"/>
+						<TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ElementName=ListBoxEgg, Path=SelectedItem.Plus, UpdateSourceTrigger=PropertyChanged}"/>
+						<Label Grid.Row="3" Content="Exp"/>
+						<!--
+						<ComboBox Grid.Row="3" Grid.Column="1"
+								  SelectedIndex="{Binding ElementName=ListBoxEgg, Path=SelectedItem.Exp, Converter={StaticResource EggExpConverter}}">
+							<ComboBoxItem Content="しろいタマゴ"/>
+							<ComboBoxItem Content="ぎんのタマゴ"/>
+							<ComboBoxItem Content="きんのタマゴ"/>
+							<ComboBoxItem Content="にじのタマゴ"/>
+						</ComboBox>
+						-->
+					</Grid>
 				</Grid>
 			</TabItem>
 			<TabItem Header="Item">
