@@ -11,6 +11,7 @@ namespace DQM2IruRuka
 	{
 		public String ItemFilter { get; set; } = "";
 		private List<Item> AllItems = new List<Item>();
+		public Info Info { get; private set; } = Info.Instance();
 		public ObservableCollection<Item> Items { get; private set; } = new ObservableCollection<Item>();
 		public ObservableCollection<Egg> Eggs { get; private set; } = new ObservableCollection<Egg>();
 		public ObservableCollection<Weapon> Weapons { get; private set; } = new ObservableCollection<Weapon>();
@@ -69,6 +70,12 @@ namespace DQM2IruRuka
 		{
 			get { return SaveData.Instance().ReadNumber(0x110, 4); }
 			set { Util.WriteNumber(0x110, 4, value, 0, 99999999); }
+		}
+
+		public uint Dress
+		{
+			get { return SaveData.Instance().ReadNumber(0x2373F, 1); }
+			set { SaveData.Instance().WriteNumber(0x2373F, 1, value); }
 		}
 	}
 }
