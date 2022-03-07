@@ -72,10 +72,88 @@ namespace DQM2IruRuka
 			set { Util.WriteNumber(0x110, 4, value, 0, 99999999); }
 		}
 
+		public uint MiniMedalHave
+		{
+			get { return SaveData.Instance().ReadNumber(0x33C, 1); }
+			set { Util.WriteNumber(0x33C, 1, value, 0, 150); }
+		}
+
+		public uint MiniMedalPass
+		{
+			get { return SaveData.Instance().ReadNumber(0xAA7, 2); }
+			set { Util.WriteNumber(0xAA7, 2, value, 0, 150); }
+		}
+
+		public uint BattleWin
+		{
+			get { return SaveData.Instance().ReadNumber(0x548, 2); }
+			set { SaveData.Instance().WriteNumber(0x548, 2, value); }
+		}
+
+		public uint Scout
+		{
+			get { return SaveData.Instance().ReadNumber(0x54A, 2); }
+			set { SaveData.Instance().WriteNumber(0x54A, 2, value); }
+		}
+
+		public uint Alignment
+		{
+			get { return SaveData.Instance().ReadNumber(0x54C, 2); }
+			set { SaveData.Instance().WriteNumber(0x54C, 2, value); }
+		}
+
+		public uint Cooperation
+		{
+			get { return SaveData.Instance().ReadNumber(0x55A, 2); }
+			set { SaveData.Instance().WriteNumber(0x55A, 2, value); }
+		}
+
+		public uint Key
+		{
+			get { return SaveData.Instance().ReadNumber(0x55C, 2); }
+			set { SaveData.Instance().WriteNumber(0x55C, 2, value); }
+		}
+
+		public uint Clear
+		{
+			get { return SaveData.Instance().ReadNumber(0x55E, 2); }
+			set { SaveData.Instance().WriteNumber(0x55E, 2, value); }
+		}
+
 		public uint Dress
 		{
 			get { return SaveData.Instance().ReadNumber(0x2373F, 1); }
 			set { SaveData.Instance().WriteNumber(0x2373F, 1, value); }
+		}
+
+		public uint Passing
+		{
+			get { return SaveData.Instance().ReadNumber(0x10F8, 2); }
+			set { SaveData.Instance().WriteNumber(0x10F8, 2, value); }
+		}
+
+		public uint PassingWin
+		{
+			get { return SaveData.Instance().ReadNumber(0x1100, 2); }
+			set { Util.WriteNumber(0x1100, 2, value, 0, 9999); }
+		}
+
+		public uint MastersGPRank
+		{
+			get { return SaveData.Instance().ReadNumber(0x215F8, 2); }
+			set { SaveData.Instance().WriteNumber(0x215F8, 2, value); }
+		}
+
+		public uint MastersGPJoin
+		{
+			get { return SaveData.Instance().ReadNumber(0x215FC, 2); }
+			set { SaveData.Instance().WriteNumber(0x215FC, 2, value); }
+		}
+
+		public uint WiFiDanPoint
+		{
+			get { return SaveData.Instance().ReadNumber(0x1F360, 2); }
+			set { Util.WriteNumber(0x1F360, 2, value, 0, 9999); }
 		}
 	}
 }
