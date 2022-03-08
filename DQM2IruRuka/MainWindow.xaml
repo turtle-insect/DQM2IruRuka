@@ -80,10 +80,15 @@
 							  ItemsSource="{Binding Info.Dress}" DisplayMemberPath="Name" SelectedIndex="{Binding Dress}"/>
 
 					<Label Grid.Column="3" Content="Passing"/>
+					<TextBox Grid.Column="4" Text="{Binding Passing, UpdateSourceTrigger=PropertyChanged}"/>
 					<Label Grid.Row="1" Grid.Column="3" Content="Passing Win"/>
+					<TextBox Grid.Row="1" Grid.Column="4" Text="{Binding PassingWin, UpdateSourceTrigger=PropertyChanged}"/>
 					<Label Grid.Row="2" Grid.Column="3" Content="Masters GP Rank"/>
+					<TextBox Grid.Row="2" Grid.Column="4" Text="{Binding MastersGPRank, UpdateSourceTrigger=PropertyChanged}"/>
 					<Label Grid.Row="3" Grid.Column="3" Content="Masters GP Join"/>
+					<TextBox Grid.Row="3" Grid.Column="4" Text="{Binding MastersGPJoin, UpdateSourceTrigger=PropertyChanged}"/>
 					<Label Grid.Row="4" Grid.Column="3" Content="WiFi Dan Point"/>
+					<TextBox Grid.Row="4" Grid.Column="4" Text="{Binding WiFiDanPoint, UpdateSourceTrigger=PropertyChanged}"/>
 				</Grid>
 			</TabItem>
 			<TabItem Header="Monster">
