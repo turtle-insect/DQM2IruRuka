@@ -11,10 +11,19 @@ namespace DQM2IruRuka
 	{
 		public event PropertyChangedEventHandler? PropertyChanged;
 
+		public Number Type { get; private set; }
+
+		public Number Skill1 { get; private set; }
+		public Number Skill2 { get; private set; }
+
 
 		public Monster(uint address)
 		{
 			mAddress = address;
+
+			Type = new Number(address + 32, 2);
+			Skill1 = new Number(address + 194, 4);
+			Skill2 = new Number(address + 198, 4);
 		}
 
 		public uint Lv
@@ -24,16 +33,6 @@ namespace DQM2IruRuka
 			{
 				Util.WriteNumber(mAddress + 72, 1, value, 1, 99);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Lv)));
-			}
-		}
-
-		public uint Type
-		{
-			get { return SaveData.Instance().ReadNumber(mAddress + 32, 2); }
-			set
-			{
-				SaveData.Instance().WriteNumber(mAddress + 32, 2, value);
-				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Type)));
 			}
 		}
 
@@ -134,26 +133,6 @@ namespace DQM2IruRuka
 			{
 				Util.WriteNumber(mAddress + 120, 2, value, 0, 999);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SkillPoint)));
-			}
-		}
-
-		public uint Skill1
-		{
-			get { return SaveData.Instance().ReadNumber(mAddress + 194, 4); }
-			set
-			{
-				SaveData.Instance().WriteNumber(mAddress + 194, 4, value);
-				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Skill1)));
-			}
-		}
-
-		public uint Skill2
-		{
-			get { return SaveData.Instance().ReadNumber(mAddress + 198, 4); }
-			set
-			{
-				SaveData.Instance().WriteNumber(mAddress + 198, 4, value);
-				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Skill2)));
 			}
 		}
 
