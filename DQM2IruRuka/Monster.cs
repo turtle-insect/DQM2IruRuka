@@ -16,6 +16,13 @@ namespace DQM2IruRuka
 		public Number Skill1 { get; private set; }
 		public Number Skill2 { get; private set; }
 
+		public Number Father { get; private set; }
+		public Number Mother { get; private set; }
+		public Number GrandFather_F { get; private set; }
+		public Number GrandMother_F { get; private set; }
+		public Number GrandFather_M { get; private set; }
+		public Number GrandMother_M { get; private set; }
+
 
 		public Monster(uint address)
 		{
@@ -24,6 +31,13 @@ namespace DQM2IruRuka
 			Type = new Number(address + 32, 2);
 			Skill1 = new Number(address + 194, 4);
 			Skill2 = new Number(address + 198, 4);
+
+			Father = new Number(address + 124, 2);
+			Mother = new Number(address + 126, 2);
+			GrandFather_F = new Number(address + 128, 2);
+			GrandMother_F = new Number(address + 132, 2);
+			GrandFather_M = new Number(address + 130, 2);
+			GrandMother_M = new Number(address + 134, 2);
 		}
 
 		public uint Lv

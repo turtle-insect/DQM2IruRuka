@@ -177,6 +177,53 @@
 								</StackPanel>
 							</Grid>
 						</TabItem>
+						<TabItem Header="Family Tree">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="100"/>
+									<ColumnDefinition/>
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition/>
+									<RowDefinition/>
+									<RowDefinition/>
+									<RowDefinition/>
+									<RowDefinition/>
+									<RowDefinition/>
+									<RowDefinition Height="9*"/>
+								</Grid.RowDefinitions>
+								<Label Content="Father"/>
+								<StackPanel Grid.Column="1" Orientation="Horizontal">
+									<Button Content=" ... " DataContext="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Father}" Click="ButtonChoiceMonsterType_Click"/>
+									<Label Content="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Father.Value, Converter={StaticResource MonsterTypeConverter}}"/>
+								</StackPanel>
+								<Label Grid.Row="1" Content="Mother"/>
+								<StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+									<Button Content=" ... " DataContext="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Mother}" Click="ButtonChoiceMonsterType_Click"/>
+									<Label Content="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Mother.Value, Converter={StaticResource MonsterTypeConverter}}"/>
+								</StackPanel>
+								<Label Grid.Row="2" Content="GrandFather(F)"/>
+								<StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+									<Button Content=" ... " DataContext="{Binding ElementName=ListBoxMonster, Path=SelectedItem.GrandFather_F}" Click="ButtonChoiceMonsterType_Click"/>
+									<Label Content="{Binding ElementName=ListBoxMonster, Path=SelectedItem.GrandFather_F.Value, Converter={StaticResource MonsterTypeConverter}}"/>
+								</StackPanel>
+								<Label Grid.Row="3" Content="GrandMother(F)"/>
+								<StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+									<Button Content=" ... " DataContext="{Binding ElementName=ListBoxMonster, Path=SelectedItem.GrandMother_F}" Click="ButtonChoiceMonsterType_Click"/>
+									<Label Content="{Binding ElementName=ListBoxMonster, Path=SelectedItem.GrandMother_F.Value, Converter={StaticResource MonsterTypeConverter}}"/>
+								</StackPanel>
+								<Label Grid.Row="4" Content="GrandFather(M)"/>
+								<StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+									<Button Content=" ... " DataContext="{Binding ElementName=ListBoxMonster, Path=SelectedItem.GrandFather_M}" Click="ButtonChoiceMonsterType_Click"/>
+									<Label Content="{Binding ElementName=ListBoxMonster, Path=SelectedItem.GrandFather_M.Value, Converter={StaticResource MonsterTypeConverter}}"/>
+								</StackPanel>
+								<Label Grid.Row="5" Content="GrandMother(M)"/>
+								<StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
+									<Button Content=" ... " DataContext="{Binding ElementName=ListBoxMonster, Path=SelectedItem.GrandMother_M}" Click="ButtonChoiceMonsterType_Click"/>
+									<Label Content="{Binding ElementName=ListBoxMonster, Path=SelectedItem.GrandMother_M.Value, Converter={StaticResource MonsterTypeConverter}}"/>
+								</StackPanel>
+							</Grid>
+						</TabItem>
 					</TabControl>
 				</Grid>
 			</TabItem>
