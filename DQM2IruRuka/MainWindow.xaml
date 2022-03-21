@@ -98,7 +98,7 @@
 						<ColumnDefinition/>
 						<ColumnDefinition/>
 					</Grid.ColumnDefinitions>
-					<ListBox Name="ListBoxMonster" ItemsSource="{Binding Monsters}"/>
+					<ListBox Name="ListBoxMonster" ItemsSource="{Binding Monsters}" DisplayMemberPath="Name"/>
 					<Grid Grid.Column="1">
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition/>

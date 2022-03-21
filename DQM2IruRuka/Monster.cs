@@ -11,6 +11,7 @@ namespace DQM2IruRuka
 	{
 		public event PropertyChangedEventHandler? PropertyChanged;
 
+		public String Name { get; private set; }
 		public Number Type { get; private set; }
 
 		public Number Skill1 { get; private set; }
@@ -28,6 +29,7 @@ namespace DQM2IruRuka
 		{
 			mAddress = address;
 
+			Name = Util.ReadName(address);
 			Type = new Number(address + 32, 2);
 			Skill1 = new Number(address + 194, 4);
 			Skill2 = new Number(address + 198, 4);
