@@ -155,5 +155,10 @@ namespace DQM2IruRuka
 			get { return SaveData.Instance().ReadNumber(0x1F360, 2); }
 			set { Util.WriteNumber(0x1F360, 2, value, 0, 9999); }
 		}
+
+		public String Name
+		{
+			get { return Util.ReadName(0xF0); }
+		}
 	}
 }
