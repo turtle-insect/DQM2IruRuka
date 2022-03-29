@@ -57,7 +57,7 @@ namespace DQM2IruRuka
 			get { return SaveData.Instance().ReadNumber(mAddress + 56, 2); }
 			set
 			{
-				Util.WriteNumber(mAddress + 56, 2, value, 1, 999);
+				Util.WriteNumber(mAddress + 56, 2, value, 1, 9999);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(MaxHP)));
 			}
 		}
@@ -67,7 +67,7 @@ namespace DQM2IruRuka
 			get { return SaveData.Instance().ReadNumber(mAddress + 58, 2); }
 			set
 			{
-				Util.WriteNumber(mAddress + 58, 2, value, 0, 999);
+				Util.WriteNumber(mAddress + 58, 2, value, 0, 9999);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(MaxMP)));
 			}
 		}
@@ -77,7 +77,7 @@ namespace DQM2IruRuka
 			get { return SaveData.Instance().ReadNumber(mAddress + 60, 2); }
 			set
 			{
-				Util.WriteNumber(mAddress + 60, 2, value, 0, 999);
+				Util.WriteNumber(mAddress + 60, 2, value, 0, 9999);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HP)));
 			}
 		}
@@ -87,7 +87,7 @@ namespace DQM2IruRuka
 			get { return SaveData.Instance().ReadNumber(mAddress + 62, 2); }
 			set
 			{
-				Util.WriteNumber(mAddress + 62, 2, value, 0, 999);
+				Util.WriteNumber(mAddress + 62, 2, value, 0, 9999);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(MP)));
 			}
 		}
@@ -97,7 +97,7 @@ namespace DQM2IruRuka
 			get { return SaveData.Instance().ReadNumber(mAddress + 64, 2); }
 			set
 			{
-				Util.WriteNumber(mAddress + 64, 2, value, 0, 999);
+				Util.WriteNumber(mAddress + 64, 2, value, 0, 9999);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Offense)));
 			}
 		}
@@ -107,7 +107,7 @@ namespace DQM2IruRuka
 			get { return SaveData.Instance().ReadNumber(mAddress + 66, 2); }
 			set
 			{
-				Util.WriteNumber(mAddress + 66, 2, value, 0, 999);
+				Util.WriteNumber(mAddress + 66, 2, value, 0, 9999);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Defense)));
 			}
 		}
@@ -117,7 +117,7 @@ namespace DQM2IruRuka
 			get { return SaveData.Instance().ReadNumber(mAddress + 68, 2); }
 			set
 			{
-				Util.WriteNumber(mAddress + 68, 2, value, 0, 999);
+				Util.WriteNumber(mAddress + 68, 2, value, 0, 9999);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Speed)));
 			}
 		}
@@ -127,7 +127,7 @@ namespace DQM2IruRuka
 			get { return SaveData.Instance().ReadNumber(mAddress + 70, 2); }
 			set
 			{
-				Util.WriteNumber(mAddress + 70, 2, value, 0, 999);
+				Util.WriteNumber(mAddress + 70, 2, value, 0, 9999);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Wise)));
 			}
 		}
@@ -147,7 +147,7 @@ namespace DQM2IruRuka
 			get { return SaveData.Instance().ReadNumber(mAddress + 120, 2); }
 			set
 			{
-				Util.WriteNumber(mAddress + 120, 2, value, 0, 999);
+				Util.WriteNumber(mAddress + 120, 2, value, 0, 9999);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SkillPoint)));
 			}
 		}
