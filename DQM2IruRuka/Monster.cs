@@ -16,6 +16,10 @@ namespace DQM2IruRuka
 
 		public Number Skill1 { get; private set; }
 		public Number Skill2 { get; private set; }
+		public Number Skill3 { get; private set; }
+		public Number Skill4 { get; private set; }
+		public Number Skill5 { get; private set; }
+		public Number Skill6 { get; private set; }
 
 		public Number Father { get; private set; }
 		public Number Mother { get; private set; }
@@ -33,6 +37,10 @@ namespace DQM2IruRuka
 			Type = new Number(address + 32, 2);
 			Skill1 = new Number(address + 194, 4);
 			Skill2 = new Number(address + 198, 4);
+			Skill3 = new Number(address + 202, 4);
+			Skill4 = new Number(address + 206, 4);
+			Skill5 = new Number(address + 210, 4);
+			Skill6 = new Number(address + 214, 4);
 
 			Father = new Number(address + 124, 2);
 			Mother = new Number(address + 126, 2);
