@@ -126,8 +126,8 @@
 						</Grid.RowDefinitions>
 						<Label  Content="Type"/>
 						<StackPanel Grid.Column="1" Orientation="Horizontal">
-							<Button Content=" ... " DataContext="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Type}" Click="ButtonChoiceMonsterType_Click"/>
-							<Label Grid.Column="1" Content="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Type.Value, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource MonsterTypeConverter}}"/>
+							<Button Content=" ... " DataContext="{Binding ElementName=ListBoxMonster, Path=SelectedItem}" Click="ButtonChoiceMonsterType_Click"/>
+							<Label Grid.Column="1" Content="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Type, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource MonsterTypeConverter}}"/>
 						</StackPanel>
 						<Label Grid.Row="2" Content="Lv"/>
 						<TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Lv, UpdateSourceTrigger=PropertyChanged}"/>

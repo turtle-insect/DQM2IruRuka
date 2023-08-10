@@ -44,7 +44,7 @@ namespace DQM2IruRuka
 			for (uint index = 0; index < 500; index++)
 			{
 				Monster monster = new Monster(0x4580 + index * 220);
-				if (monster.Type.Value == 0) continue;
+				if (monster.Type == 0) continue;
 
 				Monsters.Add(monster);
 			}

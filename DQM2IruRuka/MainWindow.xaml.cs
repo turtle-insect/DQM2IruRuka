@@ -84,10 +84,10 @@ namespace DQM2IruRuka
 
 		private void ButtonChoiceMonsterType_Click(object sender, RoutedEventArgs e)
 		{
-			var number = (sender as Button)?.DataContext as Number;
-			if (number == null) return;
+			var monster = (sender as Button)?.DataContext as Monster;
+			if (monster == null) return;
 
-			number.Value = Choice(ChoiceWindow.eType.eType, number.Value);
+			monster.Type = Choice(ChoiceWindow.eType.eType, monster.Type);
 		}
 
 		private void ButtonChoiceEggType_Click(object sender, RoutedEventArgs e)

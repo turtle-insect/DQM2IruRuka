@@ -12,7 +12,6 @@ namespace DQM2IruRuka
 		public event PropertyChangedEventHandler? PropertyChanged;
 
 		public String Name { get; private set; }
-		public Number Type { get; private set; }
 
 		public Number Skill1 { get; private set; }
 		public Number Skill2 { get; private set; }
@@ -34,7 +33,6 @@ namespace DQM2IruRuka
 			mAddress = address;
 
 			Name = Util.ReadName(address);
-			Type = new Number(address + 32, 2);
 			Skill1 = new Number(address + 194, 4);
 			Skill2 = new Number(address + 198, 4);
 			Skill3 = new Number(address + 202, 4);
@@ -57,6 +55,17 @@ namespace DQM2IruRuka
 			{
 				Util.WriteNumber(mAddress + 72, 1, value, 1, 99);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Lv)));
+			}
+		}
+
+		public uint Type
+		{
+			get { return SaveData.Instance().ReadNumber(mAddress + 32, 2); }
+			set
+			{
+				SaveData.Instance().WriteNumber(mAddress + 32, 2, value);
+				SaveData.Instance().WriteNumber(mAddress + 218, 2, value);
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Type)));
 			}
 		}
 
