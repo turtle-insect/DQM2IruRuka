@@ -1,3 +1,5 @@
+![DL Count](https://img.shields.io/github/downloads/turtle-insect/DQM2IruRuka/total.svg)
+
 # 概要
 3DS ドラゴンクエストモンスターズ2 イルとルカの不思議なふしぎな鍵のセーブデータ編集Tool
 
